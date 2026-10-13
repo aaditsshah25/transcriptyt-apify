@@ -1,0 +1,13 @@
+{
+	"actorSpecification": 1,
+	"name": "youtube-transcript",
+	"title": "YouTube Transcript Scraper (any language, AI fallback)",
+	"description": "Get transcripts from YouTube videos, playlists, channels or search results. 150+ languages, translation, SRT/VTT/text/JSON output, and AI transcription for videos without captions. Pay per transcript.",
+	"version": "0.1",
+	"buildTag": "latest",
+	"input": "./input_schema.json",
+	"storages": {
+		"dataset": "./dataset_schema.json"
+	},
+	"dockerfile": "../Dockerfile"
+}

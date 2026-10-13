@@ -1,0 +1,73 @@
+{
+	"title": "YouTube Transcript Scraper",
+	"type": "object",
+	"schemaVersion": 1,
+	"properties": {
+		"videos": {
+			"title": "Video URLs or IDs",
+			"type": "array",
+			"description": "YouTube watch, youtu.be, Shorts or embed URLs, or 11-character video IDs.",
+			"editor": "stringList",
+			"prefill": ["https://www.youtube.com/watch?v=dQw4w9WgXcQ"]
+		},
+		"playlistOrChannel": {
+			"title": "Playlist or channel URL",
+			"type": "string",
+			"description": "Get transcripts for the videos in a playlist or a channel's uploads, e.g. https://www.youtube.com/@mkbhd.",
+			"editor": "textfield"
+		},
+		"searchQuery": {
+			"title": "Search query",
+			"type": "string",
+			"description": "Search YouTube and get transcripts for the results.",
+			"editor": "textfield"
+		},
+		"maxVideos": {
+			"title": "Max videos (playlist, channel, search)",
+			"type": "integer",
+			"description": "How many videos to take from the playlist, channel or search results.",
+			"default": 50,
+			"minimum": 1,
+			"maximum": 500
+		},
+		"language": {
+			"title": "Language",
+			"type": "string",
+			"description": "BCP-47 code of the caption track, e.g. en, es, de. Leave empty for the original or English track.",
+			"editor": "textfield"
+		},
+		"translateTo": {
+			"title": "Translate to",
+			"type": "string",
+			"description": "Machine-translate transcripts into this language (150+ supported), e.g. en, fr, ja.",
+			"editor": "textfield"
+		},
+		"format": {
+			"title": "Output format",
+			"type": "string",
+			"description": "JSON gives full text plus timed segments. Other formats are returned in the 'content' field.",
+			"editor": "select",
+			"enum": ["json", "text", "md", "srt", "vtt", "csv"],
+			"enumTitles": ["JSON (text + segments)", "Plain text", "Markdown", "SRT", "VTT", "CSV"],
+			"default": "json"
+		},
+		"includeSegments": {
+			"title": "Include timed segments",
+			"type": "boolean",
+			"description": "JSON only. Turn off to get just the full text.",
+			"default": true
+		},
+		"timestamps": {
+			"title": "Timestamps in text",
+			"type": "boolean",
+			"description": "Prefix each line with [HH:MM:SS] in text and Markdown output.",
+			"default": false
+		},
+		"aiFallback": {
+			"title": "AI transcription when there are no captions",
+			"type": "boolean",
+			"description": "Transcribe the audio of videos that have no captions. Charged per minute of video on top of the transcript price.",
+			"default": false
+		}
+	}
+}

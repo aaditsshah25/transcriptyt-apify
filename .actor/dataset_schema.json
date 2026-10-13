@@ -1,0 +1,25 @@
+{
+	"actorSpecification": 1,
+	"views": {
+		"overview": {
+			"title": "Transcripts",
+			"transformation": {
+				"fields": ["url", "title", "author", "language", "durationSeconds", "source", "text", "content", "error"]
+			},
+			"display": {
+				"component": "table",
+				"properties": {
+					"url": { "label": "Video", "format": "link" },
+					"title": { "label": "Title" },
+					"author": { "label": "Channel" },
+					"language": { "label": "Language" },
+					"durationSeconds": { "label": "Duration (s)", "format": "number" },
+					"source": { "label": "Source" },
+					"text": { "label": "Transcript" },
+					"content": { "label": "Formatted" },
+					"error": { "label": "Error" }
+				}
+			}
+		}
+	}
+}
