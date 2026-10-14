@@ -1,0 +1,12 @@
+{
+	"actorOutputSchemaVersion": 1,
+	"title": "YouTube transcripts",
+	"description": "One dataset item per video: title, channel, language, duration, transcript text and the formatted transcript.",
+	"properties": {
+		"transcripts": {
+			"type": "string",
+			"title": "Transcripts",
+			"template": "{{links.apiDefaultDatasetUrl}}/items"
+		}
+	}
+}
